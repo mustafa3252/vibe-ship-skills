@@ -1,114 +1,40 @@
 # Vibe Ship Skills
 
-> Loop-style agent skills for vibe coders who want speed without the mess.
-
-<p align="center">
-  <img src="assets/vibe-loop-hero.svg" alt="Vibe Ship Skills hero" width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/mustafa3252/vibe-ship-skills/stargazers"><img src="https://img.shields.io/github/stars/mustafa3252/vibe-ship-skills?style=social" alt="GitHub stars"></a>
-  <a href="https://github.com/mustafa3252/vibe-ship-skills/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-black" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/skills-10-7c3aed" alt="10 skills">
-  <img src="https://img.shields.io/badge/made%20for-vibe%20coders-06b6d4" alt="made for vibe coders">
-  <img src="https://img.shields.io/badge/install-npx%20skills-22c55e" alt="npx skills install">
-</p>
+> Practical agent skills for builders who like to move fast — but still want code that runs, demos that work, and launches that look polished.
 
 Created by **Mustafa**  
 Instagram: [@mustafaiscoding](https://instagram.com/mustafaiscoding) · X/Twitter: [@_mustafa30_](https://twitter.com/_mustafa30_)
 
-## What this is
+![License](https://img.shields.io/badge/license-MIT-black) ![Skills](https://img.shields.io/badge/skills-10-7c3aed) ![Made for](https://img.shields.io/badge/made%20for-vibe%20coders-06b6d4)
 
-Vibe Ship Skills is a small operating system for AI coding agents.
+## Built for fast builders who still ship clean
 
-Instead of prompting the agent over and over, you give it a loop:
+Vibe coding works best when the agent has just enough structure to move quickly without drifting. These skills give your coding agent a simple operating system for turning ideas into working, launch-ready slices.
 
-1. understand the goal,
-2. slice the smallest useful version,
-3. build in a tight scope,
-4. verify with evidence,
-5. polish the user-facing parts,
-6. hand you a clean ship decision.
+- **Plan before files** — turn loose prompts into small, testable tasks.
+- **Build vertical slices** — avoid giant rewrites and speculative architecture.
+- **Verify the output** — every meaningful change needs a test, command, screenshot, curl, or checklist.
+- **Polish for launch** — docs, UI, and creator-friendly release notes are part of shipping.
+- **Use anywhere** — works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and agents that can read Markdown.
 
-It is our take on agent loops: practical, creator-friendly, and built for vibe coders who want to move fast without waking up to a repo full of random changes.
+## Skill map
 
-## Quick install
-
-Requires Node/npm so you can run `npx`.
-
-```bash
-npx skills add mustafa3252/vibe-ship-skills --all
+```mermaid
+flowchart LR
+    A[Idea / messy prompt] --> B[prompt-to-plan]
+    B --> C[mvp-scope-slicer]
+    C --> D[agent-brief]
+    D --> E[Build]
+    E --> F{Problem?}
+    F -- bug --> G[bug-replay]
+    F -- messy code --> H[guardrail-refactor]
+    F -- weak UI --> I[ui-polish-pass]
+    G --> J[ship-it-check]
+    H --> J
+    I --> J
+    J --> K[docs-as-tests]
+    K --> L[creator-launch-pack]
 ```
-
-Install only the skills you want:
-
-```bash
-npx skills add mustafa3252/vibe-ship-skills --skill prompt-to-plan --skill ship-it-check
-```
-
-Install globally for Claude Code:
-
-```bash
-npx skills add mustafa3252/vibe-ship-skills -g -a claude-code -y
-```
-
-Use a skill without installing it:
-
-```bash
-npx skills use mustafa3252/vibe-ship-skills@prompt-to-plan | claude
-```
-
-Replace `claude` with your agent command if you use something else.
-
-List the skills:
-
-```bash
-npx skills add mustafa3252/vibe-ship-skills --list
-```
-
-## Star growth
-
-If this helps you ship cleaner with AI, star the repo. The graph below updates as the project grows.
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=mustafa3252/vibe-ship-skills&type=Date&theme=dark" />
-    <img src="https://api.star-history.com/svg?repos=mustafa3252/vibe-ship-skills&type=Date" alt="Star history chart for Vibe Ship Skills" width="100%" />
-  </picture>
-</p>
-
-## The loop system
-
-<p align="center">
-  <img src="assets/loop-system.svg" alt="The Vibe Ship loop system" width="100%" />
-</p>
-
-A good loop has six parts:
-
-| Part | What it does | Vibe Ship default |
-|---|---|---|
-| Trigger | Starts the work | manual prompt, schedule, issue label, PR event |
-| Scope | Keeps the agent contained | one vertical slice, explicit non-goals |
-| State | Carries context across runs | `STATE.md`, issue comments, changelog notes |
-| Worker | Makes the change | coding agent in a branch or worktree |
-| Verifier | Checks the work | tests, screenshots, curl, lint, second-agent review |
-| Human gate | Stops risky automation | you approve deletes, deploys, auth, billing, merges |
-
-## Maturity ladder
-
-<p align="center">
-  <img src="assets/maturity-ladder.svg" alt="Loop maturity ladder" width="100%" />
-</p>
-
-Start boring. Earn trust.
-
-| Level | Mode | Use it for | Human approval |
-|---|---|---|---|
-| L1 | Report-only | triage, summaries, risk notes, recommendations | before any change |
-| L2 | Assisted fixes | small PRs, docs, tests, safe refactors | before merge |
-| L3 | Trusted automation | allowlisted chores with rollback | after clear policy exists |
-
-Most teams should live at L1 and L2 for a while. L3 is not the goal. Shipping safely is the goal.
 
 ## Included skills
 
@@ -125,47 +51,41 @@ Most teams should live at L1 and L2 for a while. L3 is not the goal. Shipping sa
 | [`creator-launch-pack`](skills/creator-launch-pack/SKILL.md) | Turn a shipped mini-project into an educational launch post, reel hook, and changelog. |
 | [`agent-brief`](skills/agent-brief/SKILL.md) | Write one crisp handoff that tells any coding agent the role, constraints, checks, and done definition. |
 
-## Loop patterns
+## Quick install
 
-| Pattern | What it does | Start here |
-|---|---|---|
-| [Daily hygiene](patterns/daily-hygiene.md) | scans issues, TODOs, failing checks, and stale work | L1 report |
-| [PR babysitter](patterns/pr-babysitter.md) | watches PRs and explains what is blocking merge | L1 comment |
-| [Bug replay loop](patterns/bug-replay-loop.md) | reproduces the bug before touching the fix | L2 PR |
-| [Launch polish loop](patterns/launch-polish-loop.md) | checks README, UI, screenshots, and launch copy | L2 checklist |
-| [Dependency scout](patterns/dependency-scout.md) | reviews dependency updates without blind bumping | L1 report |
-| [Creator devlog](patterns/creator-devlog.md) | turns commits into a human build update | L1 draft |
+Requires Node/npm so you can run `npx`. The easiest way is with the open skills CLI:
 
-See all patterns in [`patterns/`](patterns/README.md).
-
-## Example loop brief
-
-```text
-Use Vibe Ship Skills.
-Loop: launch polish
-Level: L2 assisted PR
-Goal: Prepare this repo for a public launch.
-State source: README.md, open issues, recent commits, screenshots.
-Allowed actions: edit docs, add examples, run validation commands, open a PR.
-Never do: deploy, delete files, change secrets, modify billing/auth, auto-merge.
-Done means: PR with a short summary, screenshots if relevant, and exact verification output.
+```bash
+npx skills add mustafa3252/vibe-ship-skills --all
 ```
 
-More templates live in [`examples/prompts/`](examples/prompts/loop-brief.md).
+Install only the skills you want:
 
-## Suggested repo files
+```bash
+npx skills add mustafa3252/vibe-ship-skills --skill prompt-to-plan --skill ship-it-check
+```
 
-You can copy these into any project that uses agent loops:
+Install globally for a specific agent:
 
-| File | Purpose |
-|---|---|
-| [`LOOP.md`](LOOP.md) | describes the loops allowed in the repo |
-| [`STATE.md`](STATE.md) | durable project state outside the chat window |
-| [`docs/loop-design.md`](docs/loop-design.md) | how to design a safe loop |
-| [`docs/safety.md`](docs/safety.md) | rules for human gates and risky actions |
-| [`examples/github-actions/daily-hygiene.yml`](examples/github-actions/daily-hygiene.yml) | starter scheduled hygiene loop |
+```bash
+npx skills add mustafa3252/vibe-ship-skills -g -a claude-code -y
+```
 
-## Manual install
+Use a skill without installing it:
+
+```bash
+npx skills use mustafa3252/vibe-ship-skills@prompt-to-plan | claude
+```
+
+Replace `claude` with your agent command if you use something else.
+
+List everything in the repo:
+
+```bash
+npx skills add mustafa3252/vibe-ship-skills --list
+```
+
+### Manual install
 
 Prefer copying files yourself?
 
@@ -183,15 +103,43 @@ mkdir -p <your-project>/.cursor/rules
 cp .cursor/rules/vibe-ship-skills.mdc <your-project>/.cursor/rules/
 ```
 
+### Any agent
+
+Open a `SKILL.md`, paste it into your agent context, and say:
+
+```text
+Read this skill and follow it for the next task.
+```
+
+## Example
+
+```text
+Use the prompt-to-plan and ship-it-check skills.
+Goal: Build a landing page for a tiny SaaS that turns GitHub issues into launch posts.
+Constraints: Next.js, Tailwind, no auth, no database.
+Done means: npm test passes and the page has a screenshot-ready hero section.
+Do not: add pricing logic or a dashboard.
+```
+
 ## Why vibe coders need this
 
-Vibe coding is great for momentum. The failure mode is letting the agent run longer than your understanding.
+Vibe coding is amazing for momentum. The failure mode is not speed — it is **unverified speed**.
 
-These skills keep the fun part: quick ideas, fast prototypes, agent collaboration, and creator-style shipping.
+These skills keep the fun part:
 
-They add the missing guardrails: small specs, proof loops, scoped changes, human gates, and launch-ready docs.
+- quick ideas;
+- fast prototypes;
+- agent collaboration;
+- creator-style shipping.
 
-## Brand
+And add the missing guardrails:
+
+- tiny specs;
+- proof loops;
+- scoped changes;
+- launch-ready docs.
+
+## Branding
 
 Built with taste by **Mustafa**.
 
@@ -202,4 +150,4 @@ If this helps you ship cleaner with AI, star the repo and tag me with what you b
 
 ## License
 
-MIT. Use it, remix it, and ship something useful.
+MIT — use it, remix it, and ship something useful.
