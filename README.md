@@ -7,34 +7,15 @@ Instagram: [@mustafaiscoding](https://instagram.com/mustafaiscoding) · X/Twitte
 
 ![License](https://img.shields.io/badge/license-MIT-black) ![Skills](https://img.shields.io/badge/skills-10-7c3aed) ![Made for](https://img.shields.io/badge/made%20for-vibe%20coders-06b6d4)
 
-## The twist
+## Built for fast builders who still ship clean
 
-Most AI-coding repos either collect a thousand rules or give you one giant manifesto. This repo is different:
+Vibe coding works best when the agent has just enough structure to move quickly without drifting. These skills give your coding agent a simple operating system for turning ideas into working, launch-ready slices.
 
-- **small skills, not prompt soup** — each skill has one job;
-- **vibe → verify** — every skill pushes the agent toward a proof loop;
-- **creator-builder taste** — sharp README, demo-first thinking, launch assets included;
-- **cross-agent friendly** — Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and any agent that can read Markdown.
-
-## Research snapshot
-
-I looked at viral / high-star GitHub repos in the AI coding skills, Cursor rules, Claude Code, and vibe-coding space. The bar was **20k+ stars**; the repo below is an original take inspired by the category, not a copy of their content.
-
-<img src="assets/stars-reference.svg" alt="Reference repos with 20k+ stars" width="100%">
-
-| Reference repo | Stars captured | What people seem to like |
-|---|---:|---|
-| [obra/superpowers](https://github.com/obra/superpowers) | 241,435 | agentic skills methodology |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 223,440 | agent harness + skills |
-| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 184,567 | one-file coding rules |
-| [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 67,933 | production-grade engineering skills |
-| [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 61,561 | vibe coding → agentic engineering |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 47,593 | Claude Code ecosystem curation |
-| [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) | 40,142 | Cursor rules collection |
-| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 26,839 | cross-agent skill library |
-| [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) | 27,211 | task board for coding agents |
-| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 118,738 | daily trending agency-style agent roles |
-
+- **Plan before files** — turn loose prompts into small, testable tasks.
+- **Build vertical slices** — avoid giant rewrites and speculative architecture.
+- **Verify the output** — every meaningful change needs a test, command, screenshot, curl, or checklist.
+- **Polish for launch** — docs, UI, and creator-friendly release notes are part of shipping.
+- **Use anywhere** — works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and agents that can read Markdown.
 
 ## Skill map
 
@@ -55,14 +36,6 @@ flowchart LR
     K --> L[creator-launch-pack]
 ```
 
-```mermaid
-xychart-beta
-    title "Reference star counts captured during research"
-    x-axis [superpowers, ECC, Karpathy, agency-agents, agent-skills, best-practice, awesome-claude, cursorrules, vibe-kanban, awesome-agent]
-    y-axis "Stars" 0 --> 250000
-    bar [241435, 223440, 184567, 118738, 67933, 61561, 47593, 40142, 27211, 26839]
-```
-
 ## Included skills
 
 | Skill | Use when |
@@ -78,37 +51,61 @@ xychart-beta
 | [`creator-launch-pack`](skills/creator-launch-pack/SKILL.md) | Turn a shipped mini-project into an educational launch post, reel hook, and changelog. |
 | [`agent-brief`](skills/agent-brief/SKILL.md) | Write one crisp handoff that tells any coding agent the role, constraints, checks, and done definition. |
 
-
 ## Quick install
 
-Clone the repo, then copy the skills you want into your agent's skills folder.
+Requires Node/npm so you can run `npx`. The easiest way is with the open skills CLI:
+
+```bash
+npx skills add mustafa3252/vibe-coder-skills --all
+```
+
+Install only the skills you want:
+
+```bash
+npx skills add mustafa3252/vibe-coder-skills --skill prompt-to-plan --skill ship-it-check
+```
+
+Install globally for a specific agent:
+
+```bash
+npx skills add mustafa3252/vibe-coder-skills -g -a claude-code -y
+```
+
+Use a skill without installing it:
+
+```bash
+npx skills use mustafa3252/vibe-coder-skills@prompt-to-plan | claude
+```
+
+Replace `claude` with your agent command if you use something else.
+
+List everything in the repo:
+
+```bash
+npx skills add mustafa3252/vibe-coder-skills --list
+```
+
+### Manual install
+
+Prefer copying files yourself?
 
 ```bash
 git clone https://github.com/mustafa3252/vibe-coder-skills.git
 cd vibe-coder-skills
-```
-
-### Claude Code / Claude-style skills
-
-```bash
 mkdir -p ~/.claude/skills
 cp -R skills/* ~/.claude/skills/
 ```
 
-### Cursor
-
-Copy the Cursor rule:
+For Cursor project rules:
 
 ```bash
-mkdir -p .cursor/rules
+mkdir -p <your-project>/.cursor/rules
 cp .cursor/rules/vibe-coder-skills.mdc <your-project>/.cursor/rules/
 ```
 
-Or paste the relevant `SKILL.md` into your project context.
-
 ### Any agent
 
-Use the prompt template inside each `SKILL.md` and tell your model:
+Open a `SKILL.md`, paste it into your agent context, and say:
 
 ```text
 Read this skill and follow it for the next task.
