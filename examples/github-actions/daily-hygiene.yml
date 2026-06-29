@@ -1,0 +1,23 @@
+name: Daily hygiene loop
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print loop brief
+        run: |
+          cat <<'BRIEF'
+          Use Vibe Ship Skills. Run an L1 daily hygiene report.
+          Inspect issues, PRs, TODOs, and failing checks.
+          Do not change files. Output one short report with evidence.
+          BRIEF
