@@ -1,4 +1,4 @@
-# Vibe Coder Skills
+# Vibe Ship Skills
 
 > Practical agent skills for builders who like to move fast — but still want code that runs, demos that work, and launches that look polished.
 
@@ -56,25 +56,25 @@ flowchart LR
 Requires Node/npm so you can run `npx`. The easiest way is with the open skills CLI:
 
 ```bash
-npx skills add mustafa3252/vibe-coder-skills --all
+npx skills add mustafa3252/vibe-ship-skills --all
 ```
 
 Install only the skills you want:
 
 ```bash
-npx skills add mustafa3252/vibe-coder-skills --skill prompt-to-plan --skill ship-it-check
+npx skills add mustafa3252/vibe-ship-skills --skill prompt-to-plan --skill ship-it-check
 ```
 
 Install globally for a specific agent:
 
 ```bash
-npx skills add mustafa3252/vibe-coder-skills -g -a claude-code -y
+npx skills add mustafa3252/vibe-ship-skills -g -a claude-code -y
 ```
 
 Use a skill without installing it:
 
 ```bash
-npx skills use mustafa3252/vibe-coder-skills@prompt-to-plan | claude
+npx skills use mustafa3252/vibe-ship-skills@prompt-to-plan | claude
 ```
 
 Replace `claude` with your agent command if you use something else.
@@ -82,7 +82,7 @@ Replace `claude` with your agent command if you use something else.
 List everything in the repo:
 
 ```bash
-npx skills add mustafa3252/vibe-coder-skills --list
+npx skills add mustafa3252/vibe-ship-skills --list
 ```
 
 ### Manual install
@@ -90,8 +90,8 @@ npx skills add mustafa3252/vibe-coder-skills --list
 Prefer copying files yourself?
 
 ```bash
-git clone https://github.com/mustafa3252/vibe-coder-skills.git
-cd vibe-coder-skills
+git clone https://github.com/mustafa3252/vibe-ship-skills.git
+cd vibe-ship-skills
 mkdir -p ~/.claude/skills
 cp -R skills/* ~/.claude/skills/
 ```
@@ -100,7 +100,7 @@ For Cursor project rules:
 
 ```bash
 mkdir -p <your-project>/.cursor/rules
-cp .cursor/rules/vibe-coder-skills.mdc <your-project>/.cursor/rules/
+cp .cursor/rules/vibe-ship-skills.mdc <your-project>/.cursor/rules/
 ```
 
 ### Any agent

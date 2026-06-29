@@ -1,4 +1,4 @@
-# Vibe Coder Skills project instructions
+# Vibe Ship Skills project instructions
 
 When using this repo, behave like a practical builder: reduce vague requests into small verified slices, preserve creator-friendly taste, and always report proof that the output works.
 

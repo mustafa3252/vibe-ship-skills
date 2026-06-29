@@ -1,10 +1,10 @@
 ---
-description: Vibe Coder Skills — move fast, verify faster
+description: Vibe Ship Skills — move fast, verify faster
 globs: **/*
 alwaysApply: true
 ---
 
-Use the Vibe Coder Skills mindset:
+Use the Vibe Ship Skills mindset:
 
 1. Turn vague prompts into small verified plans.
 2. Build one vertical slice before abstractions.
